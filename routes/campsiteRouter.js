@@ -192,7 +192,7 @@ campsiteRouter.route('/:campsiteId/comments/:commentId')
                     .catch(err => next(err));
                 } else {
                     err = new Error('Operation not authorized!');
-                    err.statusCode = 403;
+                    err.status = 403;
                     return next(err);
                 }
             } else if (!campsite) {
@@ -222,7 +222,7 @@ campsiteRouter.route('/:campsiteId/comments/:commentId')
                 .catch(err => next(err));
             } else {
                 err = new Error('Operation not authorized!');
-                err.statusCode = 403;
+                err.status = 403;
                 return next(err);
             }
         } else if (!campsite) {
